@@ -77,21 +77,27 @@
 
     <audio id="select-sound" src="select.mp3"></audio>
 
-    <script>
-        function playSound() {
-            document.getElementById('select-sound').play();
-        }
-        function showText(section) {
-            const text = {
-                'welcome':"Welcome to my palace my friand!!!! have fun exploring me!!"
-                'about me': "My name is Haoxuan Li but you can call me darren, I am currently at the end of second year(last term).",
-                'hobbies': "As you can see i love persona 5 and other jrpgs also love soul like games so add my steam boys and my insergram ladies",
-                'contact': "You can reach me via email or social media!"
-            };
+   <script>
+    function playSound() {
+        document.getElementById('select-sound').play();
+    }
+
+    function showText(section) {
+        const text = {
+            'welcome': "Welcome to my profile!",
+            'about me': "My name is Haoxuan Li but you can call me Darren, I am currently at the end of second year(last term).",
+            'hobbies': "As you can see, I love Persona 5 and other JRPGs. I also love Souls-like games, so add my Steam boys and my Instagram ladies.",
+            'contact': "You can reach me via email or social media!"
+        };
+        
+        // Ensure section exists before updating text
+        if (text[section]) {
             const infoBox = document.getElementById('info-box');
             infoBox.innerText = text[section];
             infoBox.style.display = 'block';
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
