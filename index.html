@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona 5 Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('/mnt/data/image.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: red;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 3px 3px 0px white;
+        }
+        .menu {
+            margin-top: 200px;
+        }
+        .option {
+            display: block;
+            width: fit-content;
+            margin: 10px auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background: white;
+            color: black;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 5px 5px 0px red;
+            border-radius: 50px;
+        }
+        .option:hover {
+            transform: scale(1.1);
+            background: red;
+            color: white;
+        }
+        .dialog-box {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            padding: 15px;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            box-shadow: 5px 5px 0px red;
+            border-radius: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="date-box">
+            <span class="date">9/10</span>
+            <span class="day">SATURDAY</span>
+        </div>
+        <div class="time">Daytime</div>
+    </div>
+
+    <div class="menu">
+        <div class="option" onclick="playSound(); showText('about')">About Me</div>
+        <div class="option" onclick="playSound(); showText('projects')">My Projects</div>
+        <div class="option" onclick="playSound(); showText('skills')">Skills</div>
+        <div class="option" onclick="playSound(); showText('contact')">Contact</div>
+    </div>
+
+    <div class="dialog-box">
+        <p id="dialog-text">This is my profile page. What do you want to check?</p>
+    </div>
+
+    <audio id="select-sound" src="select.mp3"></audio>
+
+    <script>
+        function playSound() {
+            document.getElementById('select-sound').play();
+        }
+        function showText(section) {
+            const text = {
+                'about': "I'm a passionate developer interested in AI, gaming, and web design!",
+                'projects': "I have worked on various projects, including web development and game design.",
+                'skills': "My skills include JavaScript, Unity, Python, and UI/UX design.",
+                'contact': "You can reach me via email or social media!"
+            };
+            const dialog = document.getElementById('dialog-text');
+            dialog.style.opacity = 0;
+            setTimeout(() => {
+                dialog.innerText = text[section];
+                dialog.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+</body>
+</html>
