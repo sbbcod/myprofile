@@ -17,9 +17,10 @@
         }
         .menu {
             position: absolute;
-            right: 10%;
-            top: 30%;
-            text-align: left;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
         .option {
             display: block;
@@ -40,6 +41,21 @@
             background: white;
             color: black;
         }
+        .info-box {
+            position: absolute;
+            left: 5%;
+            top: 30%;
+            width: 30%;
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            padding: 15px;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            box-shadow: 5px 5px 0px black;
+            border-radius: 10px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -49,6 +65,8 @@
         <div class="option" onclick="playSound(); showText('skills')">Skills</div>
         <div class="option" onclick="playSound(); showText('contact')">Contact</div>
     </div>
+
+    <div id="info-box" class="info-box"></div>
 
     <audio id="select-sound" src="select.mp3"></audio>
 
@@ -63,7 +81,9 @@
                 'skills': "My skills include JavaScript, Unity, Python, and UI/UX design.",
                 'contact': "You can reach me via email or social media!"
             };
-            alert(text[section]);
+            const infoBox = document.getElementById('info-box');
+            infoBox.innerText = text[section];
+            infoBox.style.display = 'block';
         }
     </script>
 </body>
