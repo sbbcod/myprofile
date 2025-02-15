@@ -6,6 +6,8 @@
     <title>Persona 5 Profile</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
         body {
             background: url('p5_背景2.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -25,15 +27,16 @@
         .option {
             display: block;
             width: fit-content;
-            padding: 20px 40px;
-            font-size: 22px;
+            padding: 15px 30px;
+            font-size: 30px;
             font-weight: bold;
+            font-family: 'Luckiest Guy', cursive;
             background: black;
             color: white;
             cursor: pointer;
             transition: transform 0.2s;
-            box-shadow: none;
-            border-radius: 50px;
+            text-shadow: 3px 3px 0px red, 5px 5px 0px black;
+            border-radius: 10px;
             margin-bottom: 15px;
         }
         .option:hover {
@@ -44,17 +47,20 @@
         .info-box {
             position: absolute;
             left: 5%;
-            top: 30%;
-            width: 35%;
+            top: 35%;
+            width: 30%;
+            max-width: 500px;
             background: rgba(255, 255, 255, 0.8);
             color: black;
-            padding: 20px;
-            font-size: 22px;
+            padding: 25px;
+            font-size: 24px;
             font-style: italic;
             font-weight: bold;
             box-shadow: 5px 5px 0px black;
             border-radius: 10px;
             display: none;
+            max-height: 150px;
+            overflow: auto;
         }
     </style>
 </head>
