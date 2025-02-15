@@ -9,18 +9,11 @@
         body {
             background: url('Screenshot%202025-02-15%20153455.png') no-repeat center center fixed;
             background-size: cover;
-            color: white;
+            color: black;
             font-family: 'Arial', sans-serif;
         }
         .header {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: red;
-            padding: 10px;
-            font-size: 20px;
-            font-weight: bold;
-            box-shadow: 3px 3px 0px white;
+            display: none;
         }
         .menu {
             position: absolute;
@@ -68,14 +61,6 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="date-box">
-            <span class="date">9/10</span>
-            <span class="day">SATURDAY</span>
-        </div>
-        <div class="time">Daytime</div>
-    </div>
-
     <div class="menu">
         <div class="option" onclick="playSound(); showText('about')">About Me</div>
         <div class="option" onclick="playSound(); showText('projects')">My Projects</div>
